@@ -4,6 +4,8 @@ This repository contains two programs that will brute force the seed that was us
 
 > **Disclaimer** I'm not good in crypto. The code may not be entirely correct (though it works perfectly for me) and it certainly isn't optimized. This was programmed purely for fun and giggles for a CTF challenge. There are alot of (detailed and better) resources out there for cracking `java.util.Random` but since I haven't found any actual working implementation, here goes...
 
+**TLDR:** Java's pseudorandom number generator is predictable as soon as we have one `long` or two subsequent `int` tokens.
+
 ### Some Context
 
 During a CTF I came across a challenge that went like this: you are given one random number and are supposed to predict the next number. If you enter the correct number, you get the flag. You are also provided the source code of the responsible application - a Java program.
@@ -33,8 +35,6 @@ public class Challenge {
 The challenge could represent any application that uses Java's PRNG `java.util.Random` where at least one `long` token (or two `int` tokens, more on that in a moment) is known.
 
 ### The Solve
-
-**TLDR:** Java's pseudorandom number generator is predictable as soon as we have one `long` or two subsequent `int` tokens.
 
 Java features a [pseudorandom number generator that is open source](https://developer.classpath.org/doc/java/util/Random-source.html) and isn't cryptographically secure (even when seeded with CSRNG generated values). 
 
