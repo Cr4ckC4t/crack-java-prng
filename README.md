@@ -1,6 +1,8 @@
 # Cracking the Java PRNG
 
-This repository contains two programs that will brute force the seed that was used in a call to `java.util.Random.nextLong()` when given one `long` token. The `c` program is faster but only concentrates on brute forcing the raw seed. The python script is more detailed, commented and also predicts the result of the next call to `nextLong()`.
+This repository contains a python script that will brute force the seed that was used in a call to `java.util.Random.nextLong()` when given one `long` token. It also predicts the result of the next `nextLong()` and prints the cracked seed.
+
+## Usage Example
 
 > **Disclaimer** I'm not good in crypto. The code may not be entirely correct (though it works perfectly for me) and it certainly isn't optimized. This was programmed purely for fun and giggles for a CTF challenge. There are alot of (detailed and better) resources out there for cracking `java.util.Random` but since I haven't found any actual working implementation, here goes...
 
@@ -18,7 +20,7 @@ We are given the following scenario (a mix of Java and pseudo code):
 import java.util.Random;
 import java.security.SecureRandom;
 
-public class Challenge {
+public class Main {
     public static void main(String[] args) {
         SecureRandom seedGen = new SecureRandom();
         Random rng = new Random(seedGen.nextLong());
