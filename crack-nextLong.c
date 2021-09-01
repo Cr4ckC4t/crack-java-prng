@@ -9,7 +9,8 @@
 
 #include <stdio.h>
 
-#define LONG_TOKEN -3876303079732769403 // example token <<<< PLACE YOUR TOKEN HERE
+/* THE nextLong TOKEN  GOES HERE vvv */
+#define LONG_TOKEN -3876303079732769403 // (example token) <<<< PLACE YOUR TOKEN HERE 
 #define BRUTE_N_BITS 20 // must be at least 16 (shouldn't require to be changed)
 
 /* Returns next random 32 bit integer. */
@@ -25,8 +26,8 @@ unsigned long nextInt(unsigned long long seed) {
 int main(void) {
 	printf("Starting application..\n\n");
 
-	/* THE nextLong TOKEN  GOES HERE vvvvv */
-	unsigned long long token = -3876303079732769403;
+	
+	unsigned long long token = LONG_TOKEN;
 	unsigned long upper = token >> (32+(BRUTE_N_BITS-16));
 	unsigned long lower = token & 0xFFFFFFFF;
 
