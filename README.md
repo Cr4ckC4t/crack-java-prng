@@ -6,7 +6,7 @@ This repository contains a python script that will brute force the seed that was
 
 ![Example](example-solve.png)
 
-> **Disclaimer** I'm not good in crypto. The code may not be entirely correct (though it works perfectly for me) and it certainly isn't optimized. This was programmed purely for fun and giggles for a CTF challenge. There are alot of (detailed and better) resources out there for cracking `java.util.Random` but since I haven't found any actual working implementation, here goes...
+> **Disclaimer** I'm not good in crypto. The code may not be entirely correct (though it works perfectly for me) and it certainly isn't optimized. This was programmed purely for fun and giggles for a CTF challenge. There are alot of (detailed and better) resources out there for cracking `java.util.Random` such as [this article](https://jazzy.id.au/2010/09/20/cracking_random_number_generators_part_1.html) and [this implementation in Java](https://github.com/sacundim/cracking-prngs) (worth checking out).
 
 **TLDR:** Java's pseudorandom number generator is predictable as soon as we have one `long` or two subsequent `int` tokens.
 
